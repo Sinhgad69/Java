@@ -1,0 +1,26 @@
+public class FileHandling {
+    public static void main(String[] args) {
+        try {
+            FileWriter inputFileWriter = new FileWriter("input.txt");
+            BufferedWriter inputBufferedWriter = new BufferedWriter(inputFileWriter);
+            inputBufferedWriter.write("This is a sample text for input file.");
+            inputBufferedWriter.close();
+            inputFileWriter.close();
+            FileReader inputFileReader = new FileReader("input.txt");
+            BufferedReader inputBufferedReader = new BufferedReader(inputFileReader);
+            FileWriter outputFileWriter = new FileWriter("output.txt");
+            BufferedWriter outputBufferedWriter = new BufferedWriter(outputFileWriter);
+            int data;
+            while ((data = inputBufferedReader.read()) != -1) {
+                outputBufferedWriter.write(data);
+            }
+            inputBufferedReader.close();
+            inputFileReader.close();
+            outputBufferedWriter.close();
+            outputFileWriter.close();
+            System.out.println("Data has been successfully copied from input.txt to output.txt.");
+        } catch (IOException e) {
+            System.out.println("An error occurred: " + e.getMessage());
+        }
+    }
+}
