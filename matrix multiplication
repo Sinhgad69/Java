@@ -1,0 +1,39 @@
+ import java.util.Scanner; 
+public class Matrix{
+static Scanner sc=new Scanner(System.in); static void read(int a[][],int r,int c){
+int i,j; for(i=0;i<r;i++){
+for(j=0;j<c;j++){
+System.out.println("Enter Element at Index"+i+j); a[i][j]=sc.nextInt();
+}
+}
+}
+static void display(int a[][],int r,int c){ int i,j;
+for(i=0;i<r;i++){ for(j=0;j<c;j++){
+System.out.print(a[i][j]+" ");
+}
+System.out.println();
+}
+}
+public static void main(String[] args){ int r1,r2,c1,c2,i,j;
+System.out.println("Enter the size of first matrix:"); r1=sc.nextInt();
+c1=sc.nextInt();
+System.out.println("Enter the size of Second matrix:"); r2=sc.nextInt();
+ 
+c2=sc.nextInt();
+
+int[][] arr1=new int[r1][c1];
+int[][] arr2=new int[r1][c1];
+int[][] arr3=new int[r1][c1]; if(r1==r2 &c1==c2){
+System.out.println("Enter elements of First Matrix:"); read(arr1,r1,c1);
+System.out.println("Enter elements of Second Matrix:"); read(arr2,r1,c1);
+for(i=0;i<r1;i++){ for(j=0;j<c1;j++){
+arr3[i][j]=arr1[i][j]+arr2[i][j];
+}
+}
+System.out.println("First Matrix is:"); display(arr1,r1,c1); System.out.println("Second Matrix is:"); display(arr2,r2,c2); System.out.println("Addition of two matrix:"); display(arr3,r1,c1);
+}
+else{
+System.out.println("Size does not match try again");
+}
+}
+}
