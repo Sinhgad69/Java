@@ -1,0 +1,48 @@
+import java.util.*; 
+public class ArraySort {
+public static void sortArray(int arr[]) { 
+for(int i=0;i<arr.length-1;i++) {
+for(int j=0;j<arr.length-1-i;j++) { 
+if(arr[j] > arr[j+1] ) {
+int temp = arr[j]; 
+arr[j]= arr[j+1]; 
+arr[j+1]= temp;
+}
+}
+}
+}
+public static void printarray(int arr[]) { 
+for(int i=0; i<arr.length ; i++ ) { 
+System.out.print(arr[i]+ " ");
+}
+System.out.println();
+}
+public static void bubbleSortStrings(String[] array) { 
+int n = array.length;
+for (int i = 0; i < n - 1; i++) { 
+for (int j = 0; j < n – i – 1; j++) {
+if (array[j].compareTo(array[j + 1]) > 0) {
+String temp = array[j];
+Array[j] = array[j + 1];
+Array[j + 1] = temp;
+}
+}
+}
+}
+Public static void main(String args[]) {
+Int arr[] = new int [5];
+Scanner sc= new Scanner (System.in);
+For(int i=0;i<arr.length;i++) {
+Int num = sc.nextInt();
+Arr[i] = num;
+} 
+String[] stringArray = {“apple”, “banana”, “orange”, “kiwi”, “grape”};
+bubbleSortStrings(stringArray);
+System.out.println(“Sorted string array: “);
+For (String s : stringArray) {
+System.out.print(s + “ “);
+}
+sortArray(arr);
+printarray(arr);
+}
+}
