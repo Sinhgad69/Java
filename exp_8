@@ -1,0 +1,47 @@
+import java.util.Scanner; 
+interface ShapeX{
+double pi=3.14; double area(); double perimeter();
+}
+class Circle implements ShapeX{ double radius;
+Circle(double radius){ this.radius=radius;
+}
+public double area(){ return(pi*radius*radius);
+}
+public double perimeter(){ return(2*pi*radius);
+}
+}
+class Rectangle implements ShapeX{ double length,width;
+Rectangle(double length,double width){ this.length=length;
+this.width=width;
+} 
+public double area(){ return(2*length*width);
+}
+public double perimeter(){ return(2*(length*width));
+}
+}
+class Elipse implements ShapeX{ double major,minor;
+Elipse(double major,double minor){ this.major=major; this.minor=minor;
+}
+public double area(){ return(pi*major*minor);
+}
+public double perimeter(){ return(2*pi*Math.sqrt((major*major+minor*minor)/2));
+}
+}
+public class first{
+public static void main(String[] args){ Scanner sc=new Scanner(System.in);
+System.out.println("Enter the Radius of Circle :"); double radius=sc.nextDouble();
+Circle c=new Circle(radius); double ac=c.area();
+double pc=c.perimeter(); 
+System.out.println("Enter the Length of Rectangle :"); double length=sc.nextDouble(); System.out.println("Enter the Width of Rectangle :"); double width=sc.nextDouble();
+Rectangle r=new Rectangle(length,width);
+
+
+double ar=r.area(); double pr=r.perimeter();
+System.out.println("Enter the Major :"); double major=sc.nextDouble(); System.out.println("Enter the Minor :"); double minor=sc.nextDouble();
+Elipse e=new Elipse(major,minor); double ae=e.area();
+double pe=e.perimeter();
+
+
+System.out.println("Area of Circle ="+ac); System.out.println("Perimeter of Circle ="+pc); System.out.println("Area of Rectangle ="+ar); System.out.println("Perimeter of Rectangle ="+pr); System.out.println("Area of Ellipse ="+ae); System.out.println("Perimeter of Ellipse ="+pe);
+}
+} 
