@@ -1,0 +1,47 @@
+class Player{ 
+String name;
+int ranking ,age;
+Player(String name,int ranking,int ae){ this.name=name; this.ranking=ranking;
+this.age=age;
+}
+void display(){
+System.out.println("The name of the player is :"+name); System.out.println("The ranking of the player is :"+ranking); System.out.println("The age of the player is :"+age);
+}
+}
+class CricketPlayer extends Player{ String game;
+String role;
+CricketPlayer(String name,int ranking,int age,String game,String role){ super(name,ranking,age);
+this.game=game; this.role=role;
+}
+void display(){ super.display();
+System.out.println("The game is :"+game); System.out.println("The role of player is :"+role);
+}
+}
+ 
+class FootballPlayer extends Player{ String league;
+String place;
+FootballPlayer(String name,int ranking,int age,String league,String place){ super(name,ranking,age);
+this.league=league; this.place=place;
+}
+void display(){ super.display();
+System.out.println("The league is :"+league); System.out.println("The place of the league is :"+place);
+}
+}
+class HockeyPlayer extends Player{ String league,position;
+HockeyPlayer(String name,int ranking,int age,String league,String position){ super(name,ranking,age);
+this.league=league; this.position=position;
+}
+void display(){ super.display();
+System.out.println("The the league is :"+league); System.out.println("The position of the Player is :"+position);
+}
+}
+public class TestPlayer{
+public static void main(String [] args){
+CricketPlayer c=new CricketPlayer("Sonal",1,20,"Cricket","Batsman"); c.display();
+System.out.println();
+FootballPlayer f=new FootballPlayer("Isha",2,19,"WWF","Daund");
+ 
+f.display(); System.out.println();
+HockeyPlayer h=new HockeyPlayer("Prasad",3,21,"IIL","India"); h.display();
+}
+}
